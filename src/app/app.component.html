@@ -8,25 +8,29 @@
 <app-timer></app-timer>
 
 <div class="container text-center">
-<img src="../../assets/img/pomodoro.jpg" />
-<app-countdown [seconds] ="25"
-  (progress)="timeout = $event"
-  (complete)="onContdownCompleted()" 
-  #counter>
-</app-countdown>
-<p>
-  <button
-    class="btn btn-default"
-    (click)="counter.seconds = 25">
-    Reset countdown to 25 seconds
-  </button>
-</p>
+  <img src="../../assets/img/pomodoro.jpg" />
+  <app-countdown 
+    [seconds] ="25"
+    (progress)="timeout = $event"
+    (complete)="onContdownCompleted()"
+    [seconds] ="timeout" 
+    #counter>
+    
 
-<p *ngIf="counter.seconds < 10" >
-  Beware! Only
-  <strong>{{counter.seconds}} seconds</strong>
-  left.
-</p>
+  </app-countdown>
+  <p *ngIf="timeout === 1">Time up!</p>
+  <p>
+    <button
+      class="btn btn-default"
+      (click)="counter.seconds = 25">
+      Reset countdown to 25 seconds
+    </button>
+  </p>
+  <p *ngIf="counter.seconds < 10" >
+    Beware! Only
+    <strong>{{counter.seconds}} seconds</strong>
+    left.
+  </p>
 </div>
 
 

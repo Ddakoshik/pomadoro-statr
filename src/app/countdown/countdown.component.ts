@@ -1,9 +1,12 @@
-import { Directive, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Directive, ViewEncapsulation, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
-  styleUrls: ['./countdown.component.css']
+  styleUrls: ['./countdown.component.css'],
+  styles: ['h1 { color: #900 }'],
+  encapsulation: ViewEncapsulation.Emulated
+
 })
 export class CountdownComponent implements OnInit {
   @Input() seconds: number;
@@ -27,10 +30,3 @@ export class CountdownComponent implements OnInit {
   }
 }
 
-// @Component({
-// selector: 'pomadoro-timer',
-// directives: [CountdownComponent],
-// template: '<countdown></countdown>'
-// })
-// class PomodoroTimerComponent {}
-// bootstrap(PomodoroTimerComponent);
