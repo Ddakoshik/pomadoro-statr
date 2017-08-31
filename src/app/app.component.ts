@@ -8,17 +8,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'app works!';
+  // timeout: number;
 
-//   seconds: number = 25;
-//   intervalId: any;
-  
-//   constructor() {
-//    this.intervalId = setInterval(() =>this.tick(), 1000);
-// }
-
-//   private tick(): void {
-//     if (-- this.seconds < 1) {
-//       clearInterval(this.intervalId);
-//     }
-//   }
+  onContdownCompleted(): void{
+    alert('Time up!');
+  }
 }
